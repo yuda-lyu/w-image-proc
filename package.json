@@ -1,0 +1,33 @@
+{
+  "name": "w-image",
+  "version": "1.0.0",
+  "main": "dist/w-image.umd.js",
+  "dependencies": {
+    "lodash-es": "^4.17.21",
+    "sharp": "^0.34.5",
+    "wsemi": "^1.8.34"
+  },
+  "devDependencies": {
+    "w-package-tools": "^1.1.2"
+  },
+  "scripts": {
+    "test": "mocha --parallel --timeout 60000",
+    "deploy": "gh-pages -d docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuda-lyu/w-image.git"
+  },
+  "keywords": [
+    "package",
+    "tool",
+    "sharp",
+    "image",
+    "resize",
+    "crop",
+    "base64",
+    "nodejs"
+  ],
+  "author": "yuda-lyu(semisphere)",
+  "license": "MIT"
+}
