@@ -10,8 +10,7 @@ rollupFiles({
     fns: 'WImageProc.mjs',
     fdSrc,
     fdTar,
-    hookNameDist: () => 'w-md2html',
-    // nameDistType: 'kebabCase', //直接由hookNameDist給予
+    nameDistType: 'kebabCase', //直接由hookNameDist給予
     globals: {
         'path': 'path',
         'fs': 'fs',
