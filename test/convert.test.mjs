@@ -1,7 +1,7 @@
 import _ from 'lodash-es'
 import w from 'wsemi'
 import assert from 'assert'
-import wi from '../src/WImage.mjs'
+import wi from '../src/WImageProc.mjs'
 
 
 describe('convert', function() {

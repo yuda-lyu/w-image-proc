@@ -1,29 +1,29 @@
-# w-image
+# w-image-proc
 A tool for image.
 
 ![language](https://img.shields.io/badge/language-JavaScript-orange.svg) 
-[![npm version](http://img.shields.io/npm/v/w-image.svg?style=flat)](https://npmjs.org/package/w-image) 
-[![license](https://img.shields.io/npm/l/w-image.svg?style=flat)](https://npmjs.org/package/w-image) 
-[![npm download](https://img.shields.io/npm/dt/w-image.svg)](https://npmjs.org/package/w-image) 
-[![npm download](https://img.shields.io/npm/dm/w-image.svg)](https://npmjs.org/package/w-image) 
-[![jsdelivr download](https://img.shields.io/jsdelivr/npm/hm/w-image.svg)](https://www.jsdelivr.com/package/npm/w-image)
+[![npm version](http://img.shields.io/npm/v/w-image-proc.svg?style=flat)](https://npmjs.org/package/w-image-proc) 
+[![license](https://img.shields.io/npm/l/w-image-proc.svg?style=flat)](https://npmjs.org/package/w-image-proc) 
+[![npm download](https://img.shields.io/npm/dt/w-image-proc.svg)](https://npmjs.org/package/w-image-proc) 
+[![npm download](https://img.shields.io/npm/dm/w-image-proc.svg)](https://npmjs.org/package/w-image-proc) 
+[![jsdelivr download](https://img.shields.io/jsdelivr/npm/hm/w-image-proc.svg)](https://www.jsdelivr.com/package/npm/w-image-proc)
 
 ## Documentation
-To view documentation or get support, visit [docs](https://yuda-lyu.github.io/w-image/global.html).
+To view documentation or get support, visit [docs](https://yuda-lyu.github.io/w-image-proc/global.html).
 
 ## Installation
 
 ### Using npm(ES6 module):
 ```alias
-npm i w-image
+npm i w-image-proc
 ```
 
 #### Example for convert:
-> **Link:** [[dev source code](https://github.com/yuda-lyu/w-image/blob/master/g.convert.mjs)]
+> **Link:** [[dev source code](https://github.com/yuda-lyu/w-image-proc/blob/master/g.convert.mjs)]
 ```alias
 import _ from 'lodash-es'
 import w from 'wsemi'
-import wi from './src/WImage.mjs'
+import wi from './src/WImageProc.mjs'
 
 let test = async () => {
 
@@ -76,11 +76,11 @@ await test()
 ```
 
 #### Example for resize:
-> **Link:** [[dev source code](https://github.com/yuda-lyu/w-image/blob/master/g.resize.mjs)]
+> **Link:** [[dev source code](https://github.com/yuda-lyu/w-image-proc/blob/master/g.resize.mjs)]
 ```alias
 import _ from 'lodash-es'
 import w from 'wsemi'
-import wi from './src/WImage.mjs'
+import wi from './src/WImageProc.mjs'
 
 let test = async () => {
 
@@ -137,11 +137,11 @@ await test()
 ```
 
 #### Example for crop:
-> **Link:** [[dev source code](https://github.com/yuda-lyu/w-image/blob/master/g.crop.mjs)]
+> **Link:** [[dev source code](https://github.com/yuda-lyu/w-image-proc/blob/master/g.crop.mjs)]
 ```alias
 import _ from 'lodash-es'
 import w from 'wsemi'
-import wi from './src/WImage.mjs'
+import wi from './src/WImageProc.mjs'
 
 let test = async () => {
 
@@ -198,12 +198,12 @@ await test()
 ```
 
 #### Example for base64:
-> **Link:** [[dev source code](https://github.com/yuda-lyu/w-image/blob/master/g.base64.mjs)]
+> **Link:** [[dev source code](https://github.com/yuda-lyu/w-image-proc/blob/master/g.base64.mjs)]
 ```alias
 import fs from 'fs'
 import _ from 'lodash-es'
 import w from 'wsemi'
-import wi from './src/WImage.mjs'
+import wi from './src/WImageProc.mjs'
 
 let test = async () => {
 

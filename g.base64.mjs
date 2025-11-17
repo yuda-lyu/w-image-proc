@@ -1,7 +1,7 @@
 import fs from 'fs'
 import _ from 'lodash-es'
 import w from 'wsemi'
-import wi from './src/WImage.mjs'
+import wi from './src/WImageProc.mjs'
 
 
 let test = async () => {

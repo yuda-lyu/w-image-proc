@@ -7,7 +7,7 @@ let fdTar = './dist'
 
 
 rollupFiles({
-    fns: 'WImage.mjs',
+    fns: 'WImageProc.mjs',
     fdSrc,
     fdTar,
     hookNameDist: () => 'w-md2html',

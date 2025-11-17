@@ -29,7 +29,7 @@
 <nav >
     
     
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#WImage">WImage</a></li><li><a href="global.html#base64">base64</a></li><li><a href="global.html#convert">convert</a></li><li><a href="global.html#crop">crop</a></li><li><a href="global.html#proc">proc</a></li><li><a href="global.html#resize">resize</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#WImageProc">WImageProc</a></li><li><a href="global.html#base64">base64</a></li><li><a href="global.html#convert">convert</a></li><li><a href="global.html#crop">crop</a></li><li><a href="global.html#proc">proc</a></li><li><a href="global.html#resize">resize</a></li></ul>
     
 </nav>
 
@@ -125,7 +125,7 @@
 
         
             
-<h4 class="name" id="WImage"><span class="type-signature"></span>WImage<span class="type-signature"></span></h4>
+<h4 class="name" id="WImageProc"><span class="type-signature"></span>WImageProc<span class="type-signature"></span></h4>
 
 
 
@@ -140,7 +140,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="WImage.mjs.html">WImage.mjs</a>, <a href="WImage.mjs.html#line17">line 17</a>
+        <a href="WImageProc.mjs.html">WImageProc.mjs</a>, <a href="WImageProc.mjs.html#line17">line 17</a>
     </li></ul></dd>
     
 
@@ -269,7 +269,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import fs from 'fs'import _ from 'lodash-es'import w from 'wsemi'import wi from './src/WImage.mjs'let test = async () => {    let pre = ''    let key = 'base64'    let ts = []    _.each(['png', 'svg'], (extIn) => {        _.each([            {                ext: 'jpg',            },            {                ext: 'webp',            },            {                ext: 'png',                opt: {                    compressionLevely: 5,                },            },        ], (o) => {            ts.push({                in: {                    ext: extIn,                },                out: {                    ...o,                },            })        })    })    await w.pmSeries(ts, async (t) => {        // console.log('t', t)        let fpIn = `./test/cocktail.${t.in.ext}`        let fpOut = `./test/cocktail_${pre}_${key}[${t.in.ext}_to_${t.out.ext}].base64` //html        let ext = t.out.ext        let opt = {            ..._.get(t, 'out.opt', {}),        }        let b64 = await wi.base64(fpIn, ext, opt)        // b64 = `        //     &lt;img src="${b64}">        // `        fs.writeFileSync(fpOut, b64, 'utf8')        console.log(t.in.ext, t.out.ext, 'ok')    })}await test()    .catch((err) => {        console.log(err)    })</code></pre>
+    <pre class="prettyprint"><code>import fs from 'fs'import _ from 'lodash-es'import w from 'wsemi'import wi from './src/WImageProc.mjs'let test = async () => {    let pre = ''    let key = 'base64'    let ts = []    _.each(['png', 'svg'], (extIn) => {        _.each([            {                ext: 'jpg',            },            {                ext: 'webp',            },            {                ext: 'png',                opt: {                    compressionLevely: 5,                },            },        ], (o) => {            ts.push({                in: {                    ext: extIn,                },                out: {                    ...o,                },            })        })    })    await w.pmSeries(ts, async (t) => {        // console.log('t', t)        let fpIn = `./test/cocktail.${t.in.ext}`        let fpOut = `./test/cocktail_${pre}_${key}[${t.in.ext}_to_${t.out.ext}].base64` //html        let ext = t.out.ext        let opt = {            ..._.get(t, 'out.opt', {}),        }        let b64 = await wi.base64(fpIn, ext, opt)        // b64 = `        //     &lt;img src="${b64}">        // `        fs.writeFileSync(fpOut, b64, 'utf8')        console.log(t.in.ext, t.out.ext, 'ok')    })}await test()    .catch((err) => {        console.log(err)    })</code></pre>
 
 
 
@@ -524,7 +524,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import _ from 'lodash-es'import w from 'wsemi'import wi from './src/WImage.mjs'let test = async () => {    let pre = ''    let key = 'convert'    let ts = []    _.each(['png', 'svg'], (extIn) => {        _.each([            {                ext: 'jpg',            },            {                ext: 'webp',            },            {                ext: 'png',                opt: {                    compressionLevely: 5,                },            },        ], (o) => {            ts.push({                in: {                    ext: extIn,                },                out: {                    ...o,                },            })        })    })    await w.pmSeries(ts, async (t) => {        // console.log('t', t)        let fpIn = `./test/cocktail.${t.in.ext}`        let fpOut = `./test/cocktail_${pre}_${key}[${t.in.ext}_to_${t.out.ext}].${t.out.ext}`        let opt = {            ..._.get(t, 'out.opt', {}),        }        let r = await wi.convert(fpIn, fpOut, opt)        console.log(t, r)    })}await test()    .catch((err) => {        console.log(err)    })</code></pre>
+    <pre class="prettyprint"><code>import _ from 'lodash-es'import w from 'wsemi'import wi from './src/WImageProc.mjs'let test = async () => {    let pre = ''    let key = 'convert'    let ts = []    _.each(['png', 'svg'], (extIn) => {        _.each([            {                ext: 'jpg',            },            {                ext: 'webp',            },            {                ext: 'png',                opt: {                    compressionLevely: 5,                },            },        ], (o) => {            ts.push({                in: {                    ext: extIn,                },                out: {                    ...o,                },            })        })    })    await w.pmSeries(ts, async (t) => {        // console.log('t', t)        let fpIn = `./test/cocktail.${t.in.ext}`        let fpOut = `./test/cocktail_${pre}_${key}[${t.in.ext}_to_${t.out.ext}].${t.out.ext}`        let opt = {            ..._.get(t, 'out.opt', {}),        }        let r = await wi.convert(fpIn, fpOut, opt)        console.log(t, r)    })}await test()    .catch((err) => {        console.log(err)    })</code></pre>
 
 
 
@@ -779,7 +779,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import _ from 'lodash-es'import w from 'wsemi'import wi from './src/WImage.mjs'let test = async () => {    let pre = ''    let key = 'crop'    let ts = []    _.each(['png', 'svg'], (extIn) => {        _.each([            {                ext: 'jpg',            },            {                ext: 'webp',            },            {                ext: 'png',                opt: {                    compressionLevely: 5,                },            },        ], (o) => {            ts.push({                in: {                    ext: extIn,                },                out: {                    ...o,                },            })        })    })    await w.pmSeries(ts, async (t) => {        // console.log('t', t)        let fpIn = `./test/cocktail.${t.in.ext}`        let fpOut = `./test/cocktail_${pre}_${key}[${t.in.ext}_to_${t.out.ext}].${t.out.ext}`        let opt = {            ..._.get(t, 'out.opt', {}),        }        let left = 100        let top = 100        let width = 400        let height = 400        let r = await wi.crop(fpIn, left, top, width, height, fpOut, opt)        console.log(t, r)    })}await test()    .catch((err) => {        console.log(err)    })</code></pre>
+    <pre class="prettyprint"><code>import _ from 'lodash-es'import w from 'wsemi'import wi from './src/WImageProc.mjs'let test = async () => {    let pre = ''    let key = 'crop'    let ts = []    _.each(['png', 'svg'], (extIn) => {        _.each([            {                ext: 'jpg',            },            {                ext: 'webp',            },            {                ext: 'png',                opt: {                    compressionLevely: 5,                },            },        ], (o) => {            ts.push({                in: {                    ext: extIn,                },                out: {                    ...o,                },            })        })    })    await w.pmSeries(ts, async (t) => {        // console.log('t', t)        let fpIn = `./test/cocktail.${t.in.ext}`        let fpOut = `./test/cocktail_${pre}_${key}[${t.in.ext}_to_${t.out.ext}].${t.out.ext}`        let opt = {            ..._.get(t, 'out.opt', {}),        }        let left = 100        let top = 100        let width = 400        let height = 400        let r = await wi.crop(fpIn, left, top, width, height, fpOut, opt)        console.log(t, r)    })}await test()    .catch((err) => {        console.log(err)    })</code></pre>
 
 
 
@@ -1823,7 +1823,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import _ from 'lodash-es'import w from 'wsemi'import wi from './src/WImage.mjs'let test = async () => {    let pre = ''    let key = 'resize'    let ts = []    _.each(['png', 'svg'], (extIn) => {        _.each([            {                ext: 'jpg',            },            {                ext: 'webp',            },            {                ext: 'png',                opt: {                    compressionLevely: 5,                },            },        ], (o) => {            ts.push({                in: {                    ext: extIn,                },                out: {                    ...o,                },            })        })    })    await w.pmSeries(ts, async (t) => {        // console.log('t', t)        let fpIn = `./test/cocktail.${t.in.ext}`        let fpOut = `./test/cocktail_${pre}_${key}[${t.in.ext}_to_${t.out.ext}].${t.out.ext}`        let opt = {            ..._.get(t, 'out.opt', {}),            funGetWidth: (mt) => {                // console.log('mt', mt)                return mt.width / 2            }        }        let r = await wi.resize(fpIn, fpOut, opt)        console.log(t, r)    })}await test()    .catch((err) => {        console.log(err)    })</code></pre>
+    <pre class="prettyprint"><code>import _ from 'lodash-es'import w from 'wsemi'import wi from './src/WImageProc.mjs'let test = async () => {    let pre = ''    let key = 'resize'    let ts = []    _.each(['png', 'svg'], (extIn) => {        _.each([            {                ext: 'jpg',            },            {                ext: 'webp',            },            {                ext: 'png',                opt: {                    compressionLevely: 5,                },            },        ], (o) => {            ts.push({                in: {                    ext: extIn,                },                out: {                    ...o,                },            })        })    })    await w.pmSeries(ts, async (t) => {        // console.log('t', t)        let fpIn = `./test/cocktail.${t.in.ext}`        let fpOut = `./test/cocktail_${pre}_${key}[${t.in.ext}_to_${t.out.ext}].${t.out.ext}`        let opt = {            ..._.get(t, 'out.opt', {}),            funGetWidth: (mt) => {                // console.log('mt', mt)                return mt.width / 2            }        }        let r = await wi.resize(fpIn, fpOut, opt)        console.log(t, r)    })}await test()    .catch((err) => {        console.log(err)    })</code></pre>
 
 
 
@@ -2102,7 +2102,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> on Mon Nov 17 2025 23:48:01 GMT+0800 (台北標準時間) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> on Mon Nov 17 2025 23:53:15 GMT+0800 (台北標準時間) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

@@ -1,7 +1,7 @@
 {
-  "name": "w-image",
-  "version": "1.0.0",
-  "main": "dist/w-image.umd.js",
+  "name": "w-image-proc",
+  "version": "1.0.1",
+  "main": "dist/w-image-proc.umd.js",
   "dependencies": {
     "lodash-es": "^4.17.21",
     "sharp": "^0.34.5",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yuda-lyu/w-image.git"
+    "url": "git+https://github.com/yuda-lyu/w-image-proc.git"
   },
   "keywords": [
     "package",

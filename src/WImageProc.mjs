@@ -14,7 +14,7 @@ import base64 from './base64.mjs'
  * 詳見convert、resize、crop、base64範例
  *
  */
-let WImage = {
+let WImageProc = {
     proc,
     convert,
     resize,
@@ -23,4 +23,4 @@ let WImage = {
 }
 
 
-export default WImage
+export default WImageProc
