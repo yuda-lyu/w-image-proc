@@ -1,3 +1,4 @@
+import fs from 'fs'
 import _ from 'lodash-es'
 import w from 'wsemi'
 import wi from './src/WImageProc.mjs'
@@ -6,7 +7,7 @@ import wi from './src/WImageProc.mjs'
 let test = async () => {
 
     let pre = ''
-    let key = 'crop'
+    let key = 'base64'
 
     let ts = []
     _.each(['png', 'svg'], (extIn) => {
@@ -38,16 +39,17 @@ let test = async () => {
     await w.pmSeries(ts, async (t) => {
         // console.log('t', t)
         let fpIn = `./test/cocktail.${t.in.ext}`
-        let fpOut = `./test/cocktail_${pre}_${key}[${t.in.ext}_to_${t.out.ext}].${t.out.ext}`
+        let fpOut = `./test/cocktail_${pre}_${key}[${t.in.ext}_to_${t.out.ext}].base64` //html
+        let ext = t.out.ext
         let opt = {
             ..._.get(t, 'out.opt', {}),
         }
-        let left = 100
-        let top = 100
-        let width = 400
-        let height = 400
-        let r = await wi.crop(fpIn, left, top, width, height, fpOut, opt)
-        console.log(t, r)
+        let b64 = await wi.base64(fpIn, ext, opt)
+        // b64 = `
+        //     <img src="${b64}">
+        // `
+        fs.writeFileSync(fpOut, b64, 'utf8')
+        console.log(t.in.ext, t.out.ext, 'ok')
     })
 
 }
@@ -57,4 +59,4 @@ await test()
     })
 
 
-//node g.crop.mjs
+//node g_base64.mjs

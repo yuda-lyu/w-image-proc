@@ -6,7 +6,7 @@ import wi from './src/WImageProc.mjs'
 let test = async () => {
 
     let pre = ''
-    let key = 'convert'
+    let key = 'resize'
 
     let ts = []
     _.each(['png', 'svg'], (extIn) => {
@@ -41,8 +41,12 @@ let test = async () => {
         let fpOut = `./test/cocktail_${pre}_${key}[${t.in.ext}_to_${t.out.ext}].${t.out.ext}`
         let opt = {
             ..._.get(t, 'out.opt', {}),
+            funGetWidth: (mt) => {
+                // console.log('mt', mt)
+                return mt.width / 2
+            }
         }
-        let r = await wi.convert(fpIn, fpOut, opt)
+        let r = await wi.resize(fpIn, fpOut, opt)
         console.log(t, r)
     })
 
@@ -53,4 +57,4 @@ await test()
     })
 
 
-//node g.convert.mjs
+//node g_resize.mjs
