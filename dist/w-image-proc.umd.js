@@ -1,5 +1,5 @@
 /*!
- * w-image-proc v1.0.23
+ * w-image-proc v1.0.24
  * (c) 2018-2021 yuda-lyu(semisphere)
  * Released under the MIT License.
  */
